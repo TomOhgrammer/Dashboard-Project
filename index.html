@@ -1,0 +1,60 @@
+<!Doctype html>
+<html lang="ger">
+ <head>
+  <title>Dashboard</title>
+  <meta name=”robots” content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $.ajax({
+    url: "https://creativecommons.tankerkoenig.de/json/list.php", 
+    data: {
+        lat: 51.706839106656346,
+        lng: 8.743864519333613,
+        rad: 5,
+        sort: "price",
+        type: "e5",
+        apikey: "xxxxxxx"
+    },
+    success: function(response) {
+        if (!response.ok) {
+            // TODO: Fehlerbehandlung
+            console.error(response.message);
+        } else {
+            // TODO: Anzeige der Informationen
+            console.log(response);
+        }
+    },
+    error: function(p){
+        that.showError('AJAX-Problem', 'status: ' + p.status + ' statusText: ' + p.statusText);
+    }
+});
+      })
+    </script>
+ </head>
+<body>
+     <header>
+         <H1>Dashboard</H1>
+
+     </header>
+     <nav>
+         <ul>
+             <li>Link1</li>
+             <li>Link2</li>
+         </ul>
+
+     </nav>
+     <main> 
+     
+
+     </main>
+     <footer>
+         Erstellt von: Thomas Ohler
+
+     </footer>
+
+ 
+ </body>
+</html>
