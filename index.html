@@ -7,7 +7,34 @@
   <meta charset="UTF-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+
       $(document).ready(function() {
+          function getAPIKey(){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function(){
+                var words = xmlhttp.response;
+                    console.log("APIKey: " + words)
+                if(xmlhttp.status==200 && xmlhttp.readyState==4){    
+                    var words = xmlhttp.responseText[0];
+                    console.log("APIKey: " + xmlhttp)
+                    alert(words[0]);
+                }
+                return words
+            }
+            xmlhttp.open("GET","datei.txt",true);
+            xmlhttp.send();
+
+            // var vonSeite = 'datei.txt';  
+            // var apikey;
+            // $.get(vonSeite, function(data){
+            //     apikey = data;
+
+            // });
+           
+            
+            
+            // return words;
+          }
         $.ajax({
     url: "https://creativecommons.tankerkoenig.de/json/list.php", 
     data: {
@@ -16,7 +43,7 @@
         rad: 5,
         sort: "price",
         type: "e5",
-        apikey: "xxxxxxx"
+        apikey: getAPIKey()
     },
     success: function(response) {
         if (!response.ok) {
