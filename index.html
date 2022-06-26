@@ -6,60 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
+    <!-- <script>
 
       $(document).ready(function() {
-          function getAPIKey(){
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function(){
-                var words = xmlhttp.response;
-                    console.log("APIKey: " + words)
-                if(xmlhttp.status==200 && xmlhttp.readyState==4){    
-                    var words = xmlhttp.responseText[0];
-                    console.log("APIKey: " + xmlhttp)
-                    alert(words[0]);
-                }
-                return words
-            }
-            xmlhttp.open("GET","datei.txt",true);
-            xmlhttp.send();
-
-            // var vonSeite = 'datei.txt';  
-            // var apikey;
-            // $.get(vonSeite, function(data){
-            //     apikey = data;
-
-            // });
-           
-            
-            
-            // return words;
-          }
+          
         $.ajax({
-    url: "https://creativecommons.tankerkoenig.de/json/list.php", 
-    data: {
-        lat: 51.706839106656346,
-        lng: 8.743864519333613,
-        rad: 5,
-        sort: "price",
-        type: "e5",
-        apikey: getAPIKey()
-    },
-    success: function(response) {
-        if (!response.ok) {
-            // TODO: Fehlerbehandlung
-            console.error(response.message);
-        } else {
-            // TODO: Anzeige der Informationen
-            console.log(response);
-        }
-    },
-    error: function(p){
-        that.showError('AJAX-Problem', 'status: ' + p.status + ' statusText: ' + p.statusText);
-    }
-});
+            url: "https://creativecommons.tankerkoenig.de/json/list.php", 
+            data: {
+                lat: 51.706839106656346,
+                lng: 8.743864519333613,
+                rad: 5,
+                sort: "price",
+                type: "e5",
+                apikey: "4fcbe8e3-bbde-7ded-d4a8-77e1148e27b9"
+            },
+            success: function(response) {
+                if (!response.ok) {
+                    // TODO: Fehlerbehandlung
+                    console.error(response.message);
+                } else {
+                    // TODO: Anzeige der Informationen
+                    console.log(response);
+                }
+            },
+            error: function(p){
+                that.showError('AJAX-Problem', 'status: ' + p.status + ' statusText: ' + p.statusText);
+            }
+        });
       })
-    </script>
+    </script> -->
     <link rel="stylesheet" href="design.css">
  </head>
 <body>
